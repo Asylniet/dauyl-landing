@@ -150,10 +150,18 @@ export const Footer = () => {
       {/*  </div>*/}
       {/*</section>*/}
       
-      <section className="container py-14 text-center">
+      <section className="container py-14 text-center flex flex-wrap items-center justify-center gap-3">
         <h3>
           &copy; 2025 Сделано ShareX
         </h3>
+        <a
+          href="/files/Публичная%20оферта%20(2).pdf">
+          Публичная оферта
+        </a>
+        <a
+          href="/files/Политика_конфиденциальности_личных_данных%20(2).pdf">
+          Политика конфиденциальности
+        </a>
       </section>
     </footer>
   );
