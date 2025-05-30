@@ -342,7 +342,7 @@ export default function WhatsAppScrollChat({ contactName = 'Покупатель
                     </AnimatePresence>
                     {visibleMessages.length > 0 && (
                       <div
-                        className="block md:hidden text-center bg-primary/70 backdrop-blur-sm rounded-md p-2"
+                        className="block md:hidden text-center bg-primary/70 text-white backdrop-blur-sm rounded-md p-2"
                       >
                         <div className="font-bold text-sm">
                           {currentPhase + 1}. {phases[currentPhase].title}
