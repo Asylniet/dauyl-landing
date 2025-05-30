@@ -244,18 +244,8 @@ export default function WhatsAppScrollChat({ contactName = 'Покупатель
       </h1>
       {/* Sticky Chat Section - This creates the scrollable area */}
       <div ref={stickyContainerRef} className="h-[300vh] relative">
-        <div className="sticky top-8 h-[95vh] bg-secondary pt-8 md:py-8">
+        <div className="sticky top-8 h-screen bg-secondary pt-8 md:py-8">
           <div className="relative container mx-auto px-2 sm:px-6 h-full max-md:pb-24">
-            <div
-              className="block md:hidden absolute bottom-0 left-0 w-full py-2 px-2 sm:px-8 min-h-20 bg-gradient-to-t from-secondary z-10"
-            >
-              <div className="font-bold text-xl">
-                {phases[currentPhase].title}
-              </div>
-              <span>
-                {phases[currentPhase].description}
-              </span>
-            </div>
             <div className="max-w-7xl mx-auto h-full">
               <div className="flex gap-8 h-full">
                 {/* Left Pane - Phase Descriptions */}
@@ -350,6 +340,18 @@ export default function WhatsAppScrollChat({ contactName = 'Покупатель
                         ))
                       )}
                     </AnimatePresence>
+                    {visibleMessages.length > 0 && (
+                      <div
+                        className="block md:hidden text-center bg-primary/70 backdrop-blur-sm rounded-md p-2"
+                      >
+                        <div className="font-bold text-sm">
+                          {currentPhase + 1}. {phases[currentPhase].title}
+                        </div>
+                        <span className="text-xs">
+                          {phases[currentPhase].description}
+                        </span>
+                      </div>
+                    )}
                     <div ref={messagesEndRef} />
                   </div>
                   

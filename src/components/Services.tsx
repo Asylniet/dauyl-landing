@@ -65,7 +65,7 @@ export const Services = () => {
         </div>
         
         <FilterNegativeSchemeSvg
-          className="w-full object-contain"
+          className="w-full h-full"
         />
       </div>
     </section>
