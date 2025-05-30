@@ -11,10 +11,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { buttonVariants } from './ui/button';
+import { Button, buttonVariants } from './ui/button';
 import { Menu } from 'lucide-react';
 import { ModeToggle } from './mode-toggle';
 import { LogoIcon } from './Icons';
+import { env } from '@/lib/env.ts';
 
 interface RouteProps {
   href: string;
@@ -60,7 +61,15 @@ export const Navbar = () => {
           {/* mobile */}
           <span className="flex md:hidden">
             <ModeToggle />
-
+            <Button asChild>
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href={`${env().VITE_APP_URL}/register`}
+              >
+                Попробовать
+              </a>
+            </Button>
             <Sheet
               open={isOpen}
               onOpenChange={setIsOpen}
@@ -125,6 +134,15 @@ export const Navbar = () => {
           
           <div className="hidden md:flex gap-2">
             <ModeToggle />
+            <Button asChild>
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href={`${env().VITE_APP_URL}/register`}
+              >
+                Попробовать
+              </a>
+            </Button>
           </div>
         </NavigationMenuList>
       </NavigationMenu>

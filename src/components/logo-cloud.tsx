@@ -63,7 +63,7 @@ export const LogoCloud = () => {
                 <div className="flex items-center gap-2">
                   {partner.logo ? (
                     <img
-                      className="mx-auto h-8 w-fit"
+                      className="mx-auto h-8 w-auto"
                       src={partner.logo}
                       alt={partner.name}
                       height="32"
@@ -71,8 +71,8 @@ export const LogoCloud = () => {
                     />
                   ) : (
                     <span>
-                                            {partner.name}
-                                        </span>
+                      {partner.name}
+                    </span>
                   )}
                 </div>
               ))}

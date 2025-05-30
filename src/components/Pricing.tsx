@@ -74,7 +74,7 @@ const pricingList: PricingProps[] = [
       'Без блокировок',
       'С кнопками для взаимодействий',
     ],
-    bottomText: 'Для подключения имеется единаразовая оплата в размере 299 990₸',
+    bottomText: 'Для подключения имеется единоразовая оплата в размере 299 990₸',
     archiveNumber: 300,
   },
 ];
@@ -151,7 +151,7 @@ export const Pricing = () => {
                   </span>
                 ))}
                 {pricing.bottomText && (
-                  <div className="text-sm text-muted-foreground mt-4">
+                  <div className="font-bold text-muted-foreground mt-4 text-center">
                     {pricing.bottomText}
                   </div>
                 )}

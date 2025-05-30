@@ -24,9 +24,9 @@ function App() {
       <Features />
       <Services />
       <Cta />
+      <Pricing />
       <Testimonials />
       {/*<Team />*/}
-      <Pricing />
       {/*<Newsletter />*/}
       <FAQ />
       <Footer />
