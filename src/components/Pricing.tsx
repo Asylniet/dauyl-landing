@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Check } from 'lucide-react';
+import { env } from '@/lib/env.ts';
 
 enum PopularPlanType {
   NO = 0,
@@ -22,6 +23,8 @@ interface PricingProps {
   description: string;
   buttonText: string;
   benefitList: string[];
+  bottomText?: string;
+  archiveNumber: number;
 }
 
 const pricingList: PricingProps[] = [
@@ -33,9 +36,13 @@ const pricingList: PricingProps[] = [
       'Повышение количества отзывов',
     buttonText: 'Получить 3 дня беслплатно',
     benefitList: [
+      'Личный кабинет',
+      'Изменение текстовых шаблонов',
       'Сообщение при оформлении',
       'Сообщение при выдаче',
+      '20% скидка на архивные рассылки при подключении',
     ],
+    archiveNumber: 100,
   },
   {
     title: 'PREMIUM',
@@ -45,14 +52,30 @@ const pricingList: PricingProps[] = [
       'Полный пакет со всеми функциями',
     buttonText: 'Получить 3 дня бесплатно',
     benefitList: [
-      'Сообщение при оформлении',
-      'Сообщение при передаче на доставку',
-      'Ссылка на слежку за доставкой',
-      'Фильтрация негативных отзывов',
-      'Сообщение о доставке',
-      'Сообщение о доставке в Postomat',
+      'Все, что входит в пакет STANDART',
+      'Ссылка на отслеживание за доставкой (Kaspi Трекинг)',
+      'Фильтрация негативных отзывов посредством ИИ',
       'Напоминание о Postomat',
+      'Дожим покупателей неоставивших отзывы',
+      '50% скидка на архивные рассылки при подключении',
     ],
+    archiveNumber: 200,
+  },
+  {
+    title: 'Business WABA',
+    popular: 0,
+    price: 49990,
+    description:
+      'Для тех, кто ценит качество',
+    buttonText: 'Получить 3 дня бесплатно',
+    benefitList: [
+      'Всё, что есть в PREMIUM',
+      'Официальная рассылка через WhatsApp Business API',
+      'Без блокировок',
+      'С кнопками для взаимодействий',
+    ],
+    bottomText: 'Для подключения имеется единаразовая оплата в размере 299 990₸',
+    archiveNumber: 300,
   },
 ];
 
@@ -100,7 +123,18 @@ export const Pricing = () => {
             </CardHeader>
             
             <CardContent>
-              <Button className="w-full">{pricing.buttonText}</Button>
+              <Button className="w-full">
+                <a
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  href={`https://wa.me/${env().VITE_SUPPORT_NUMBER}?text=Хочу подключить авторассылку тарифа ${pricing.title}`}
+                >
+                  {pricing.buttonText}
+                </a>
+              </Button>
+              <div className="text-xs text-muted-foreground text-center mt-2">
+                Получите {pricing.archiveNumber} архивных рассылок бесплатно
+              </div>
             </CardContent>
             
             <hr className="w-4/5 m-auto mb-4" />
@@ -116,6 +150,11 @@ export const Pricing = () => {
                     <h3 className="ml-2">{benefit}</h3>
                   </span>
                 ))}
+                {pricing.bottomText && (
+                  <div className="text-sm text-muted-foreground mt-4">
+                    {pricing.bottomText}
+                  </div>
+                )}
               </div>
             </CardFooter>
           </Card>

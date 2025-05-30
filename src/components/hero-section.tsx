@@ -52,7 +52,11 @@ export default function HeroSection() {
               </TextEffect>
               
               <Button className="w-auto my-4" asChild>
-                <a href={`${env().VITE_APP_URL}/login`}>
+                <a
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  href={`https://wa.me/${env().VITE_SUPPORT_NUMBER}?text=Хочу подключить авторассылку Dauyl`}
+                >
                   Получить 3 дня бесплатно
                 </a>
               </Button>

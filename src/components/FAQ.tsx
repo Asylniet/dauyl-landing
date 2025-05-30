@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { env } from '@/lib/env.ts';
 
 interface FAQProps {
   question: string;
@@ -72,8 +73,9 @@ export const FAQ = () => {
       <h3 className="font-medium mt-4">
         Еще остались вопросы?{' '}
         <a
+          target="_blank"
           rel="noreferrer noopener"
-          href="#"
+          href={`https://wa.me/${env().VITE_SUPPORT_NUMBER}?text=Хочу подключить авторассылку Dauyl, есть вопросы`}
           className="text-primary transition-all border-primary hover:border-b-2"
         >
           Свяжитесь с нами
