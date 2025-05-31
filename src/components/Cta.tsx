@@ -25,7 +25,7 @@ export const Cta = () => {
         <div className="space-y-4 lg:col-start-2">
           <Button className="w-full md:mr-4 md:w-auto" asChild>
             <a target="_blank" rel="noreferrer noopener"
-               href={`https://wa.me/${env().VITE_SUPPORT_NUMBER}?text=Хочу подключить авторассылку Dauyl`}>
+               href={`${env().VITE_APP_URL}/register`}>
               Получить 3 дня бесплатно
             </a>
           </Button>

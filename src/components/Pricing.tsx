@@ -34,7 +34,7 @@ const pricingList: PricingProps[] = [
     price: 14990,
     description:
       'Повышение количества отзывов',
-    buttonText: 'Получить 3 дня беслплатно',
+    buttonText: 'Купить',
     benefitList: [
       'Личный кабинет',
       'Изменение текстовых шаблонов',
@@ -50,7 +50,7 @@ const pricingList: PricingProps[] = [
     price: 29990,
     description:
       'Полный пакет со всеми функциями',
-    buttonText: 'Получить 3 дня бесплатно',
+    buttonText: 'Купить',
     benefitList: [
       'Все, что входит в пакет STANDART',
       'Ссылка на отслеживание за доставкой (Kaspi Трекинг)',
@@ -67,7 +67,7 @@ const pricingList: PricingProps[] = [
     price: 49990,
     description:
       'Для тех, кто ценит качество',
-    buttonText: 'Получить 3 дня бесплатно',
+    buttonText: 'Купить',
     benefitList: [
       'Всё, что есть в PREMIUM',
       'Официальная рассылка через WhatsApp Business API',
