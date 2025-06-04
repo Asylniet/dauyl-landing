@@ -101,16 +101,24 @@ export const Navbar = () => {
                       {label}
                     </a>
                   ))}
-                  <a
-                    rel="noreferrer noopener"
-                    href="#"
-                    target="_blank"
-                    className={`${buttonVariants({
-                      variant: 'default',
-                    })}`}
-                  >
-                    Получить 3 дня бесплатно
-                  </a>
+                  <Button variant="outline" asChild>
+                    <a
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      href={`${env().VITE_APP_URL}/login`}
+                    >
+                      Войти
+                    </a>
+                  </Button>
+                  <Button asChild>
+                    <a
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      href={`${env().VITE_APP_URL}/register`}
+                    >
+                      Получить 3 дня бесплатно
+                    </a>
+                  </Button>
                 </nav>
               </SheetContent>
             </Sheet>
@@ -134,6 +142,15 @@ export const Navbar = () => {
           
           <div className="hidden md:flex gap-2">
             <ModeToggle />
+            <Button className="hidden md:flex" variant="outline" asChild>
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href={`${env().VITE_APP_URL}/login`}
+              >
+                Войти
+              </a>
+            </Button>
             <Button asChild>
               <a
                 target="_blank"

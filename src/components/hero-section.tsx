@@ -51,15 +51,26 @@ export default function HeroSection() {
                 Автоматизируйте общение с клиентами, собирайте отзывы и растите в выдаче — без лишних движений.
               </TextEffect>
               
-              <Button className="w-auto my-4" size="lg" asChild>
-                <a
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href={`${env().VITE_APP_URL}/register`}
-                >
-                  Получить 3 дня бесплатно
-                </a>
-              </Button>
+              <div className="flex justify-center items-center gap-2">
+                <Button variant="outline" size="lg" asChild>
+                  <a
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href={`${env().VITE_APP_URL}/login`}
+                  >
+                    Войти
+                  </a>
+                </Button>
+                <Button className="w-auto my-4" size="lg" asChild>
+                  <a
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href={`${env().VITE_APP_URL}/register`}
+                  >
+                    Получить 3 дня бесплатно
+                  </a>
+                </Button>
+              </div>
               
               {/*<AnimatedGroup*/}
               {/*  variants={{*/}
